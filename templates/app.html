@@ -10,8 +10,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        document.getElementById("service-a").src = 'https://master-service-a.foo.devops-wizard.com/serve_app';
-        document.getElementById("service-b").src = 'https://master-service-b.foo.devops-wizard.com/serve_app';
+        const dnsSegments = window.location.hostname.split('.');
+        const namespace = dnsSegments[0].split('-')[0]
+        document.getElementById("service-a").src = 'https://' + namespace + '-service-a.foo.devops-wizard.com/serve_app';
+        document.getElementById("service-b").src = 'https://' + namespace + '-service-b.foo.devops-wizard.com/serve_app';
     </script>
   </body>
 </html>
