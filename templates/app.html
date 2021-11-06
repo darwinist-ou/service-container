@@ -12,8 +12,8 @@
     <script>
         const dnsSegments = window.location.hostname.split('.');
         const namespace = dnsSegments[0].split('--')[0]
-        document.getElementById("service-a").src = 'https://' + namespace + '-service-a.foo.devops-wizard.com/serve_app';
-        document.getElementById("service-b").src = 'https://' + namespace + '-service-b.foo.devops-wizard.com/serve_app';
+        document.getElementById("service-a").src = 'https://' + namespace + '--service-a.foo.devops-wizard.com/serve_app';
+        document.getElementById("service-b").src = 'https://' + namespace + '--service-b.foo.devops-wizard.com/serve_app';
     </script>
   </body>
 </html>
