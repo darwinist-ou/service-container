@@ -5,23 +5,13 @@
     <title>axios - get example</title>
   </head>
   <body class="container">
-    <h1>axios.get</h1>
-    <div id='output' ></div>
+    <iframe id="service-a" src="hello.html" style="border: 2px solid blue;"></iframe>
+    <iframe id="service-b" src="hello.html" style="border: 2px solid blue;"></iframe>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        axios.get('https://' + window.location.hostname)
-          .then(function (response) {
-            var x = document.getElementById('output');
-            x.innerHTML = '<p>' + response.request.responseText + '</p>';
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          })
-          .then(function () {
-            // always executed
-          });
+        document.getElementById("service-a").src = 'https://master-service-a.foo.devops-wizard.com/serve_app';
+        document.getElementById("service-a").src = 'https://master-service-b.foo.devops-wizard.com/serve_app';
     </script>
   </body>
 </html>
